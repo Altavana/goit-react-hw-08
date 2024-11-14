@@ -1,0 +1,28 @@
+.form {
+  width: 300px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+.label {
+  padding-top: 7px;
+}
+.field {
+  padding: 5px 1px;
+}
+.field:active {
+  border-color: #465eae;
+  box-shadow: #465eae;
+}
+.error {
+  color: red;
+  line-height: 1.1;
+}
+.addButton {
+  margin: 7px auto 0px auto;
+}
