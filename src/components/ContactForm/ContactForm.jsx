@@ -1,25 +1,15 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
-import * as Yup from "yup";
 import style from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
+import { validationSchema } from "../../utils/schemas";
+import toast, { Toaster } from "react-hot-toast";
 
 const initialValues = {
   name: "",
   number: "",
 };
-
-const validationSchema = Yup.object({
-  name: Yup.string()
-    .min(3, "Name must contain at least 3 characters")
-    .max(50, "Name can not exceed 50 characters")
-    .matches(/^[aA-zZ\s]+$/, "Please use Latin alphabet")
-    .required("Required field"),
-  number: Yup.string()
-    .matches(/^\d{3}-\d{3}-\d{4}$/, "Phone number must be like xxx-xxx-xxxx")
-    .required("Required field"),
-});
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -31,44 +21,61 @@ const ContactForm = () => {
       number: values.number,
     };
     const action = addContact(newContact);
-    dispatch(action);
+    toast.promise(
+      dispatch(action).unwrap(),
+      {
+        success: "You have successfully added a contact",
+        error: "Failed to add contact",
+      },
+      {
+        duration: 3000,
+        position: "top-center",
+      }
+    );
     actions.resetForm();
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchema={validationSchema}
-    >
-      <Form className={style.form}>
-        <label htmlFor={nameFieldId} className={style.label}>
-          Name
-        </label>
-        <Field
-          id={nameFieldId}
-          type="text"
-          name="name"
-          className={style.field}
-          placeholder="Name Surname"
-        />
-        <ErrorMessage className={style.error} name="name" component="span" />
-        <label htmlFor={numberFieldId} className={style.label}>
-          Number
-        </label>
-        <Field
-          id={numberFieldId}
-          type="text"
-          name="number"
-          className={style.field}
-          placeholder="xxx-xxx-xxxx"
-        />
-        <ErrorMessage className={style.error} name="number" component="span" />
-        <button type="submit" className={style.addButton}>
-          Add contact
-        </button>
-      </Form>
-    </Formik>
+    <div>
+      <Toaster />
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      >
+        <Form className={style.form}>
+          <label htmlFor={nameFieldId} className={style.label}>
+            Name
+          </label>
+          <Field
+            id={nameFieldId}
+            type="text"
+            name="name"
+            className={style.field}
+            placeholder="Name Surname"
+          />
+          <ErrorMessage className={style.error} name="name" component="span" />
+          <label htmlFor={numberFieldId} className={style.label}>
+            Number
+          </label>
+          <Field
+            id={numberFieldId}
+            type="text"
+            name="number"
+            className={style.field}
+            placeholder="Please enter ukrainian phone number"
+          />
+          <ErrorMessage
+            className={style.error}
+            name="number"
+            component="span"
+          />
+          <button type="submit" className={style.addButton}>
+            Add contact
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 export default ContactForm;

@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background: linear-gradient(0deg, #5175f6, #e9e8e8 10% 90%, #5175f6);
+  padding: 10px 15px;
+}

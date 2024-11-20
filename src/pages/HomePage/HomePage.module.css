@@ -1,0 +1,23 @@
+.title {
+  font-weight: 800;
+  font-size: 30px;
+  padding: 20px 10px 10px 10px;
+  text-align: center;
+}
+.text {
+  font-weight: 700;
+  font-size: 24px;
+  color: #66ccff;
+  padding: 10px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mainImage {
+  display: block;
+  max-width: 700px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}

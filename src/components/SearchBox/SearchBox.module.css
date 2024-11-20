@@ -1,7 +1,12 @@
 .inputSearch {
-  padding: 5px 1px;
-  width: 300px;
+  padding: 5px 3px;
+  line-height: 1.5;
+  width: 280px;
 }
 .search {
+  width: 300px;
+  padding: 10px;
   margin-bottom: 20px;
+  background: #281c5c;
+  border-radius: 5px;
 }

@@ -1,0 +1,47 @@
+.register {
+  width: 350px;
+  min-height: 400px;
+  display: block;
+  border-radius: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  background: #281c5c;
+  padding: 15px;
+}
+h2 {
+  font-size: 24px;
+  color: #66ccff;
+  text-align: center;
+}
+.form {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  padding-top: 7px;
+  font-size: 16px;
+}
+.field {
+  padding: 5px 3px;
+  line-height: 1.5;
+}
+.error {
+  color: #66ccff;
+  line-height: 1.1;
+}
+.btnReg {
+  width: 90px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #112234;
+}

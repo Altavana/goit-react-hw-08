@@ -1,0 +1,23 @@
+.contactPageWrap {
+  padding: 20px 20px 120px 20px;
+}
+body .contactPageWrap {
+  background-image: url("../../images/backgr_phonebook_cont.jpg");
+}
+.errorMas {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: #281c5c;
+  padding: 15px;
+  align-items: center;
+}
+.errorImage {
+  width: 400px;
+  height: 400px;
+  margin-top: 10px;
+}
+.errorStatus {
+  font-size: 24px;
+  font-weight: 700;
+}

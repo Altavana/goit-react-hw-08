@@ -4,14 +4,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#root {
-  max-width: 1280px;
-  padding: 20px;
-}
 
 body {
-  background: #fafafa;
-  color: #000000;
+  background: #060b0f;
+  color: #f6f6f6;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -33,10 +29,6 @@ ol {
   margin: 0;
   padding: 0;
 }
-h1 {
-  size: 28px;
-  margin-bottom: 20px;
-}
 
 button {
   border-radius: 3px;
@@ -46,6 +38,10 @@ button {
   line-height: 1.5;
   font-weight: 400;
   font-size: 14px;
-  background-color: #dbdbdb;
+  background: linear-gradient(0deg, #5175f6, #e9e8e8 25% 75%, #5175f6);
   cursor: pointer;
+}
+button:hover,
+button:focus {
+  background: linear-gradient(0deg, #5951f6, #cfb68c 25% 75%, #5951f6);
 }
