@@ -3,6 +3,7 @@
 }
 body .contactPageWrap {
   background-image: url("../../images/backgr_phonebook_cont.jpg");
+  background-size: cover;
 }
 .errorMas {
   display: flex;
